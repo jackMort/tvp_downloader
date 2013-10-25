@@ -42,10 +42,10 @@ try:
             p = float(file_size_dl) / file_size
             status = "Downloading: {0} Bytes: {1}, {2}  [{3:.2%}]".format(url, file_size, file_size_dl, p)
             status = status + chr(8)*(len(status)+1)
-            #sys.stdout.write(status)
             print status
 
         f.close()
+
 except urllib2.HTTPError, e:
     if e.code == 404:
         print "invalid url: ", e.url
